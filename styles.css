@@ -11,6 +11,15 @@ body{
     position: relative;
     background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
 }
+header {
+    font-family: 'Pacifico', cursive
+}
+header a{
+    text-decoration: none;
+    color: #707070;
+    outline: none;
+}
+
 .top_space{
     margin: 10px ;
 }
@@ -32,10 +41,11 @@ audio {
 }
 .avatar {
     width: 6rem;
-    height: 6rem;
+    height: 6rem;   
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0px 5px 10px rgb(73, 71, 71);
+    transition: 500ms all;
 }
 
 .box {
@@ -63,7 +73,10 @@ audio {
 }
 .info {
     text-align: center;
+    position: relative;
+    border-radius: 50%;
 }
+
 
 .heart-box img{
     position: absolute;
@@ -71,6 +84,55 @@ audio {
     left: calc(50% - 25px);
     top: calc(50% + 40px);
     animation: hearBeat 1s ease-in-out infinite;
+}
+
+ 
+ /* hieu ung avatar */
+.info:hover .avatar{
+    transform: translateY(20px);
+    box-shadow: 0px 15px 10px rgb(73, 71, 71);
+}
+
+.info::before{
+
+    font-family: 'Pacifico', cursive;
+    content: attr(data-content);
+    position: absolute;
+    top: 20%;
+    background:transparent;
+    padding: 0px;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border:2px solid #707070;
+    border-radius: 10px;
+    color: #707070;
+    transition: 500ms all;
+    opacity: 0;
+}
+
+.info:hover::before{
+    opacity: 1;
+    top: -5%;
+}
+.info:hover::after{
+    opacity: 1;
+    top: 10%;
+}
+
+.info::after{
+   content: '';
+   position: absolute;
+   width: 0px;
+   height: 0px;
+   border-left: 8px solid transparent;
+   border-right: 8px solid transparent;
+   border-top: 8px solid #707070;
+   top: 25%;
+   left: 50%;
+   transform: translate(-50%);
+   opacity: 0;
+   transition: 500ms all;
 }
 
 @keyframes hearBeat{
@@ -86,7 +148,7 @@ audio {
     }
 
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 780px) {
    
     .box {
         flex-direction: row;
@@ -99,6 +161,9 @@ audio {
         flex-grow: 1;
         margin: 0;
     }
+    .info {
+        margin: 20px 0;
+    }
     .con1 {
         margin: 0;
     }
@@ -108,11 +173,14 @@ audio {
   }
 
   @media screen and (max-width: 600px) {
-   
    .avatar {
        width: 4rem;
        height: 4rem;
    }
+   .info:hover::after{
+    opacity: 0;
+}
+
   }
 
 
