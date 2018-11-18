@@ -25,6 +25,7 @@ img {
 }
 h1 {
     margin-bottom: 0;
+    margin-top: 0;
 }
 audio {
     margin-bottom: 5px;
@@ -94,11 +95,6 @@ audio {
     .infomation {
         flex-direction: column;
         justify-content: center;
-        flex-basis: 40%;
-    }
-    .infomation {
-        flex-direction: column;
-        justify-content: center;
         flex-basis: 30%;
         flex-grow: 1;
         margin: 0;
@@ -109,7 +105,14 @@ audio {
     .time {
         flex-basis: 30%;
     }
-
-
   }
+
+  @media screen and (max-width: 600px) {
+   
+   .avatar {
+       width: 4rem;
+       height: 4rem;
+   }
+  }
+
 
