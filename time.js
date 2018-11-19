@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     var css = document.createElement("style");
     css.type = "text/css";
-    css.innerHTML = ".typewrite > .wrap { border-right: 1px solid #707070; line-height : 80%}";
+    css.innerHTML = ".typewrite > .wrap { border-right: 0.1px solid #f7bcb6; padding : 0}";
     document.body.appendChild(css);
 
 }, false);
