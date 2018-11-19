@@ -84,4 +84,9 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     };
 
+    var css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".typewrite > .wrap { border-right: 1px solid #707070; line-height : 80%}";
+    document.body.appendChild(css);
+
 }, false);
